@@ -2,4 +2,4 @@
 
 
 
-![Class Diagram](./Class-Diagram.png)
+![Class Diagram](./Diagram.png)
