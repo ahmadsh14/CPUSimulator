@@ -7,8 +7,8 @@ namespace Assignment1
 {
     public class Scheduler
     {
-        private List<Processor> Processors; //List of processors in the system.
-        private Queue<Task> TaskQueue; //Queue to hold the tasks waiting to be executed.
+        private List<Processor> Processors;
+        private Queue<Task> TaskQueue;
         clockCycle ClockCycle = clockCycle.GetInstance();
 
         public Scheduler()
@@ -26,7 +26,7 @@ namespace Assignment1
             }
         }
 
-        public void AddTask(List<Task> tasks) //Adds a task to the task queue.
+        public void AddTask(List<Task> tasks)
         {
             while (TaskQueue.Count < tasks.Count)
             {
@@ -43,7 +43,7 @@ namespace Assignment1
             }
         }
 
-        public void AssignAndExecuteTasks() //Assigns tasks from the task queue to available processors based on priority and tie-breaking strategy.
+        public void AssignAndExecuteTasks()
         {
             while (TaskQueue.Count > 0 || Processors.Any(p => p.State == ProcessorState.Busy))
             {

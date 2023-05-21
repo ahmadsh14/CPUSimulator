@@ -1,10 +1,13 @@
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 namespace Assignment1
 {
     public class Processor
     {
-        public string Id { get; private set; } //Unique identifier for the processor
-        public ProcessorState State { get; private set; } //Current state of the processor (busy or idle).
-        public Task Task { get; private set; } //The task currently being executed on the processor.
+        public string Id { get; private set; }
+        public ProcessorState State { get; private set; }
+        public Task Task { get; private set; }
 
         public Processor(string id)
         {
@@ -13,7 +16,7 @@ namespace Assignment1
             Task = null;
         }
 
-        public void AssignTask(Task task) //Assigns a task to the processor.
+        public void AssignTask(Task task)
         {
             State = ProcessorState.Busy;
             Task = task;
@@ -23,7 +26,7 @@ namespace Assignment1
 
 
 
-        public void ExecuteTask(int clockCounter) //Resumes the interrupted task on the processor.
+        public void ExecuteTask(int clockCounter)
         {
             if (Task.State == TaskState.Executing)
             {
