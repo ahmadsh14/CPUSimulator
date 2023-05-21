@@ -10,8 +10,8 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            var data = readFromFile<Simulation>.LoadTasks("./readTasks.json");
-            var dataXML = ReadFromFileXML<Simulation>.LoadTasksXML("./ReadTaskXML.xml");
+            var data = readFromFile<Simulation>.LoadTasksJSON("./readTasks.json");
+            var dataXML = readFromFile<Simulation>.LoadTasksXML("./ReadTaskXML.xml");
 
             Console.WriteLine($"Num Of Processors: {data.ProcessorsCount}");
             var simulator = new Simulation(data.ProcessorsCount, data.Tasks);
